@@ -1,0 +1,25 @@
+take a screenshot of each module first page and then upload it in claude and tell that we are working as a team each one has a separate module then paste the folder structure 
+src/
+  components/
+    common/          ← shared components everyone uses
+      Sidebar.jsx
+      Header.jsx
+      StatsCard.jsx
+      DataTable.jsx
+      StatusBadge.jsx
+  pages/
+    auth/
+      Login.jsx
+    receptionist/
+    nurse/
+    doctor/
+    lab/
+    pharmacy/
+  context/
+    AuthContext.jsx  ← role-based auth lives here
+  routes/
+    ProtectedRoute.jsx
+  services/
+    api.js           ← all axios calls
+
+then one by one paste all the files code then start to ask claude to build your module with the existing component like if you are working in receptionist then how to add sidebar in receeptionist ok
