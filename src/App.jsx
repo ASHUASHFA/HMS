@@ -12,6 +12,11 @@ import PrescriptionQueue from './pages/pharmacy/PrescriptionQueue'
 // Doctor pages
 import DoctorDashboard from './pages/doctor/DoctorDashboard'
 import PatientConsultation from './pages/doctor/PatientConsultation'
+import Diagnosis from './pages/doctor/Diagnosis'
+import Prescription from './pages/doctor/Prescription'
+import LabOrder from './pages/doctor/LabOrder'
+import RadiologyOrder from './pages/doctor/RadiologyOrder'
+import FollowUpManager from './pages/doctor/FollowUpManager'
 
 // Lab pages
 import LabDashboard from './pages/lab/LabDashboard'
@@ -37,6 +42,33 @@ function App() {
             <PatientConsultation />
           </ProtectedRoute>
         }/>
+
+<Route path="/doctor/diagnosis/:token" element={
+  <ProtectedRoute allowedRole="doctor">
+    <Diagnosis />
+  </ProtectedRoute>
+}/>
+<Route path="/doctor/prescription/:token" element={
+  <ProtectedRoute allowedRole="doctor">
+    <Prescription />
+  </ProtectedRoute>
+}/>
+<Route path="/doctor/lab-order/:token" element={
+  <ProtectedRoute allowedRole="doctor">
+    <LabOrder />
+  </ProtectedRoute>
+}/>
+<Route path="/doctor/radiology-order/:token" element={
+  <ProtectedRoute allowedRole="doctor">
+    <RadiologyOrder />
+  </ProtectedRoute>
+}/>
+<Route path="/doctor/followup/:token" element={
+  <ProtectedRoute allowedRole="doctor">
+    <FollowUpManager />
+  </ProtectedRoute>
+}/>
+
         <Route path="/pharmacy" element={
           <ProtectedRoute allowedRole="pharmacy">
             <PharmacyDashboard />
@@ -98,6 +130,7 @@ function App() {
             <TestOrder />
           </ProtectedRoute>
         }/>
+
 
       </Routes>
     </BrowserRouter>
